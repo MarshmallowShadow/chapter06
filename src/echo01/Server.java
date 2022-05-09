@@ -6,7 +6,7 @@ import java.net.*;
 public class Server {
 	public static void main(String[] args) throws IOException {
 		ServerSocket serverSocket = new ServerSocket();
-		serverSocket.bind(new InetSocketAddress("192.168.219.172", 10001));
+		serverSocket.bind(new InetSocketAddress("172.30.1.60", 10001));
 		
 		System.out.println("<서버시작>");
 		System.out.println("===============================");
@@ -29,7 +29,7 @@ public class Server {
 			//receive
 			String msg = br.readLine();
 			
-			if(msg == null) {
+			if(msg == null) { //breaks when Client breaks with "/q"
 				break;
 			}
 			
